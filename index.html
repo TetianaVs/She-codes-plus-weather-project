@@ -1,19 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Weather</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Kyiv</h1>
-        <br />
-        <h2>25C/F</h2>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
-    </div>  
-</body>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="search">
+        <input
+          type="text"
+          id="city-search"
+          class="search"
+          placeholder="Enter a city"
+        />
+        <button type="submit" class="search">Search</button>
+      </form>
+      <div class="row">
+        <div class="col-8">
+          <h1>
+            <span class="current-city"> Current City </span>
+          </h1>
+        </div>
+        <div class="col-4">
+          <h3>Date</h3>
+          <br />
+          <h4>Time</h4>
+        </div>
+        <div class="col-12">
+          <span id="temperature">20</span>
+          <span class="degree">C/F</span>
+        </div>
+        <div class="col-5">
+          <p>
+            <span id="rain">Chance of rain: 0% </span> <br />
+            <span id="wind">Wind: 3km/h</span>
+          </p>
+        </div>
+        <div class="col-12">
+          <span id="quote"> Quote </span>
+        </div>
+        <div class="5-day-forecast">
+          <div class="row">
+            <div class="col day">
+              <p>
+                First <br />
+                15 20
+              </p>
+            </div>
+            <div class="col day">
+              <p>
+                First <br />
+                15 20
+              </p>
+            </div>
+            <div class="col day">
+              <p>
+                First <br />
+                15 20
+              </p>
+            </div>
+            <div class="col day">
+              <p>
+                First <br />
+                15 20
+              </p>
+            </div>
+            <div class="col day">
+              <p>
+                First <br />
+                15 20
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
