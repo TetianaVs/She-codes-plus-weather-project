@@ -12,33 +12,54 @@
       crossorigin="anonymous"
     />
 
+    <script
+      src="https://kit.fontawesome.com/925e4089e8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Weather</title>
   </head>
   <body>
-    <div class="container">
-      <form id="search">
-        <input
-          type="text"
-          id="city-search"
-          class="search"
-          placeholder="Enter a city"
-        />
-        <button type="submit" class="search">Search</button>
-      </form>
+    <div class="container main">
+      <div class="row">
+        <div class="col-9">
+          <form id="search">
+            <input
+              type="text"
+              id="city-search"
+              class="search"
+              placeholder="Enter a city"
+            />
+            <button type="submit" class="search-button">Search</button>
+          </form>
+        </div>
+        <div class="col-3">
+          <strong class="date">Sunday, 26 June</strong>
+          <br />
+          <div class="time">15:00 <span class="eest">(EEST)</span></div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-8">
           <h1>
-            <span class="current-city"> Current City </span>
+            <span class="current-city"> Kyiv </span> <br />
+            <i class="fa-solid fa-cloud-sun current-weather"></i>
           </h1>
         </div>
-        <div class="col-4">
-          <h3>Date</h3>
-          <br />
-          <h4>Time</h4>
-        </div>
+
         <div class="col-12">
-          <span id="temperature">20</span>
-          <span class="degree">C/F</span>
+          <span id="temperature"><strong>20</strong></span>
+          <span class="degree"
+            ><strong><span id="celsius">°C/</span></strong
+            ><span id="fahrenheit">°F</span>
+          </span>
         </div>
         <div class="col-5">
           <p>
@@ -46,39 +67,62 @@
             <span id="wind">Wind: 3km/h</span>
           </p>
         </div>
-        <div class="col-12">
-          <span id="quote"> Quote </span>
-        </div>
-        <div class="5-day-forecast">
-          <div class="row">
-            <div class="col day">
-              <p>
-                First <br />
-                15 20
+        <div class="col-2"></div>
+
+        <div class="card-group forecast">
+          <div class="card day">
+            <div class="card-body">
+              <h5 class="card-title">Sun</h5>
+              <p class="card-text weather-icon">
+                <i class="fa-solid fa-sun"></i>
+              </p>
+              <p class="card-text ppp">
+                <small class="text-muted">25/13°C</small>
               </p>
             </div>
-            <div class="col day">
-              <p>
-                First <br />
-                15 20
+          </div>
+          <div class="card day">
+            <div class="card-body">
+              <h5 class="card-title">Mon</h5>
+              <p class="card-text weather-icon">
+                <i class="fa-solid fa-cloud-sun"></i>
+              </p>
+
+              <p class="card-text">
+                <small class="text-muted">20/17°C</small>
               </p>
             </div>
-            <div class="col day">
-              <p>
-                First <br />
-                15 20
+          </div>
+          <div class="card day">
+            <div class="card-body">
+              <h5 class="card-title display">Tue</h5>
+              <p class="card-text weather-icon">
+                <i class="fa-solid fa-cloud-bolt"></i>
+              </p>
+              <p class="card-text">
+                <small class="text-muted">20/13°C</small>
               </p>
             </div>
-            <div class="col day">
-              <p>
-                First <br />
-                15 20
+          </div>
+          <div class="card day">
+            <div class="card-body">
+              <h5 class="card-title">Wed</h5>
+              <p class="card-text weather-icon">
+                <i class="fa-solid fa-cloud-sun-rain"></i>
+              </p>
+              <p class="card-text">
+                <small class="text-muted">25/13°C</small>
               </p>
             </div>
-            <div class="col day">
-              <p>
-                First <br />
-                15 20
+          </div>
+          <div class="card day">
+            <div class="card-body">
+              <h5 class="card-title">Thu</h5>
+              <p class="card-text weather-icon">
+                <i class="fa-solid fa-wind"></i>
+              </p>
+              <p class="card-text">
+                <small class="text-muted">25/13°C</small>
               </p>
             </div>
           </div>
