@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -30,26 +31,31 @@
     <div class="container main">
       <div class="row">
         <div class="col-9">
-          <form id="search">
+          <form id="search-form">
             <input
               type="text"
-              id="city-search"
+              id="city-input"
               class="search"
               placeholder="Enter a city"
             />
-            <button type="submit" class="search-button">Search</button>
+            <button type="submit" class="search-button" id="search">
+              Search
+            </button>
+            <button type="submit" class="location-button" id="locationSearch">
+              Current location
+            </button>
           </form>
         </div>
         <div class="col-3">
-          <strong class="date">Sunday, 26 June</strong>
+          <strong class="date" id="date">Sunday, 26 June</strong>
           <br />
-          <div class="time">15:00 <span class="eest">(EEST)</span></div>
+          <!-- <div class="time">15:00 <span class="eest">(EEST)</span></div> -->
         </div>
       </div>
       <div class="row">
         <div class="col-8">
           <h1>
-            <span class="current-city"> Kyiv </span> <br />
+            <span class="current-city" id="city"> Kyiv </span> <br />
             <i class="fa-solid fa-cloud-sun current-weather"></i>
           </h1>
         </div>
@@ -57,13 +63,13 @@
         <div class="col-12">
           <span id="temperature"><strong>20</strong></span>
           <span class="degree"
-            ><strong><span id="celsius">°C/</span></strong
-            ><span id="fahrenheit">°F</span>
+            ><strong><span id="celsius">°C</span></strong>
+            <!-- <span id="fahrenheit">°F</span> -->
           </span>
         </div>
         <div class="col-5">
           <p>
-            <span id="rain">Chance of rain: 0% </span> <br />
+            <span id="humidity">Humidity: 0% </span> <br />
             <span id="wind">Wind: 3km/h</span>
           </p>
         </div>
@@ -129,5 +135,6 @@
         </div>
       </div>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
