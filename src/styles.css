@@ -3,10 +3,10 @@ body {
 }
 
 #search {
-  margin-top: 20px;
-  max-width: 860px;
-  
-} 
+  margin-top: 30px;
+  height: auto;
+  width: auto;
+}
 
 .search {
   border-radius: 4px;
@@ -14,7 +14,8 @@ body {
   display: inline-block;
 }
 
-.search-button {
+.search-button,
+.location-button {
   background-color: rgba(18, 133, 159, 0.927);
   color: white;
   border-radius: 4px;
@@ -22,7 +23,8 @@ body {
   transition: all 200ms ease-and-out;
 }
 
-.search-button:hover {
+.search-button:hover,
+.location-button:hover {
   background: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
 }
 
@@ -38,6 +40,7 @@ body {
 .degree {
   font-size: 20px;
   color: rgba(17, 95, 113, 0.927);
+  font-weight: bold;
 }
 
 #celsius:hover,
@@ -50,14 +53,14 @@ body {
   );
 }
 
-#rain,
+#humidity,
 #wind {
   color: rgba(17, 95, 113, 0.927);
 }
 
 .date,
 .time {
-  margin-top: 10px;
+  margin: 10px;
   color: rgba(17, 95, 113, 0.927);
 }
 
@@ -80,7 +83,6 @@ body {
   padding: 5px;
   margin: 5px;
 }
-
 
 .card-group.forecast {
   margin: 5px;
