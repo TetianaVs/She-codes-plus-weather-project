@@ -86,6 +86,7 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector('#locationSearch');
 currentLocationButton.addEventListener('click', getCurrentLocation);
 
+
 // let weather = {
 //   paris: {
 //     temp: 19.7,
