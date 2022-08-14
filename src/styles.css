@@ -73,7 +73,7 @@ body {
   padding-bottom: 10px;
   margin-top: 50px;
   padding-left: 30px;
-   padding-right: 30px;
+  padding-right: 30px;
   border-radius: 4px;
   border: 1px solid hsl(156, 3%, 64%);
   background: url(flowers.jpg);
@@ -118,4 +118,9 @@ body {
 .weather-icon {
   color: black;
   font-size: 30px;
+}
+
+.source-link {
+  font-style: oblique;
+  color: rgba(80, 92, 94, 0.927);
 }
