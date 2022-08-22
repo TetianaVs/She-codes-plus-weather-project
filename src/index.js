@@ -44,7 +44,10 @@ function displayWeatherCondition(response) {
   let windElement = document.querySelector('#wind');
   let dateElement = document.querySelector('#date');
   let iconElement = document.querySelector('#icon');
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = `Humidity:  ${response.data.main.humidity} %`;
@@ -93,6 +96,30 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector('#locationSearch');
 currentLocationButton.addEventListener('click', getCurrentLocation);
+
+// display fahrenheit temperature when click on F
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector('#temperature');
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector('#temperature');
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector('#fahrenheit-link');
+fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector('#celsius-link');
+celsiusLink.addEventListener('click', displayCelsiusTemperature);
+
+searchCity('Kyiv');
 
 // to implement
 // change background depends on time of the day

@@ -46,6 +46,15 @@ body {
 .last-updated,
 .current-city {
   color: rgb(238, 188, 62);
+
+  /* margin-left: -8px; */
+}
+
+#date,
+.last-updated {
+  color: rgb(238, 188, 62);
+  font-size: 20px;
+  font-size: 20px;
   /* margin-left: -8px; */
 }
 
@@ -70,7 +79,7 @@ body {
 
 #celsius:hover,
 #fahrenheit:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   background: linear-gradient(
     -20deg,
     rgb(233, 222, 250) 0%,
@@ -78,11 +87,24 @@ body {
   );
 }
 
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+  text-decoration: none;
+  color: rgba(17, 95, 113, 0.927);
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
 #description,
 #humidity,
 #wind {
+  text-decoration: none;
   color: rgba(17, 95, 113, 0.927);
   text-transform: capitalize;
+  cursor: default;
 }
 
 .date,
@@ -116,13 +138,20 @@ body {
 .card-group.forecast {
   margin: 5px;
   border: 2px;
-  padding: 10px;
+  padding: 20px;
   opacity: 0.7;
+  text-decoration: none;
+  cursor: default;
+}
+
+.card-body {
+  font-size: 15px;
+  text-decoration: none;
+  cursor: default;
 }
 
 .forecast {
   text-align: center;
-  font-size: 20px;
   opacity: 0.42;
   color: rgba(17, 95, 113, 0.927);
 }
@@ -145,7 +174,13 @@ body {
 
 .weather-icon {
   color: black;
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.card-title {
+  font-size: 20px;
+  text-decoration: none;
+  cursor: default;
 }
 
 .source-link {
