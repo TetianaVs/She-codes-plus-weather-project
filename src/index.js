@@ -97,7 +97,7 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector('#locationSearch');
 currentLocationButton.addEventListener('click', getCurrentLocation);
 
-// display fahrenheit temperature when click on F
+// display fahrenheit temperature when click on F, switch from F to C temperature
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
