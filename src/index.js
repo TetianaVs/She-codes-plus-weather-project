@@ -1,14 +1,15 @@
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
+
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
 
-  let dayIndex = date.getDay();
   let days = [
     'Sunday',
     'Monday',
@@ -18,8 +19,8 @@ function formatDate(date) {
     'Friday',
     'Saturday',
   ];
-  let day = days[dayIndex];
-
+  // let day = days[dayIndex];
+  let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -34,18 +35,25 @@ let dateElement = document.querySelector('#date');
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
+// display weather conditions
 function displayWeatherCondition(response) {
-  document.querySelector('#city').innerHTML = response.data.name;
-  document.querySelector('#temperature').innerHTML = Math.round(
-    response.data.main.temp
+  let temperatureElement = document.querySelector('#temperature');
+  let cityElement = document.querySelector('#city');
+  let descriptionElement = document.querySelector('#description');
+  let humidityElement = document.querySelector('#humidity');
+  let windElement = document.querySelector('#wind');
+  let dateElement = document.querySelector('#date');
+  let iconElement = document.querySelector('#icon');
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = `Humidity:  ${response.data.main.humidity} %`;
+  windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    'src',
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  document.querySelector('#wind').innerHTML = `Wind: ${Math.round(
-    response.data.wind.speed
-  )} km/h`;
-  document.querySelector(
-    '#humidity'
-  ).innerHTML = `Humidity:  ${response.data.main.humidity} %`;
 }
 
 function displayWeather(response) {
@@ -86,6 +94,31 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector('#locationSearch');
 currentLocationButton.addEventListener('click', getCurrentLocation);
 
+// to implement
+// change background depends on time of the day
+// var t = new Date().getHours();
+// if (t >= 6 && t <= 18) {
+//   // document.write('Have a good morning!');
+//   document.body.style.backgroundImage = 'url(src/11.jpg)';
+// } else {
+//   document.body.style.backgroundImage = 'url(src/black.jpg)';
+// }
+
+// change main background when click on #change button
+
+// let secondbutton = document.getElementById('change');
+// let body = document.getElementById('container');
+
+// secondbutton.addEventListener('click', function onClick() {
+//   document.body.style.backgroundImage = 'url(src/33.jpg)';
+// });
+
+// function getCurrentLocation(event) {
+//   event.preventDefault();
+//   navigator.geolocation.getCurrentPosition(searchLocation);
+// }
+// let currentLocationButton = document.querySelector('#locationSearch');
+// currentLocationButton.addEventListener('click', getCurrentLocation);
 
 // let weather = {
 //   paris: {
