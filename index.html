@@ -28,7 +28,7 @@
     <title>Weather</title>
   </head>
   <body>
-    <div class="container main">
+    <div class="container main" id="container">
       <div class="row">
         <div class="col-9">
           <form id="search-form">
@@ -47,7 +47,10 @@
           </form>
         </div>
         <div class="col-3">
-          <strong class="date" id="date">Sunday, 26 June</strong>
+          <!-- <strong class="date" id="date">Sunday, 26 June</strong> -->
+          <button type="submit" class="change-button" id="change">
+            Change background
+          </button>
           <br />
           <!-- <div class="time">15:00 <span class="eest">(EEST)</span></div> -->
         </div>
@@ -55,19 +58,26 @@
       <div class="row">
         <div class="col-8">
           <h1>
+            <!-- <span class="current-city" id="city"> Kyiv </span> <br /> -->
+            <!-- <i class="fa-solid fa-cloud-sun current-weather"></i> -->
             <span class="current-city" id="city"> Kyiv </span> <br />
-            <i class="fa-solid fa-cloud-sun current-weather"></i>
           </h1>
+          <div class="last-updated">
+            Last updated:<strong class="date" id="date">Last updated:</strong>
+          </div>
         </div>
         <div class="col-12">
-          <span id="temperature"><strong>20</strong></span>
+          <!-- <i class="fa-solid fa-cloud-sun current-weather" id="icon"></i> -->
+          <img src="http://openweathermap.org/img/wn/0d@2x.png" id="icon" />
+          <span id="temperature">20</span>
           <span class="degree"
             ><strong><span id="celsius">°C</span></strong>
-            <!-- <span id="fahrenheit">°F</span> -->
+            <span id="fahrenheit">|°F</span>
           </span>
         </div>
-        <div class="col-5">
+        <div class="col-6">
           <p>
+            <span id="description">Clear sky</span> <br />
             <span id="humidity">Humidity: 0% </span> <br />
             <span id="wind">Wind: 3km/h</span>
           </p>
@@ -77,20 +87,14 @@
         <div class="card-group forecast">
           <div class="card day">
             <div class="card-body">
-              <h5 class="card-title">Sun</h5>
-              <p class="card-text weather-icon">
-                <i class="fa-solid fa-sun"></i>
-              </p>
-              <p class="card-text ppp">
-                <small class="text-muted">25/13°C</small>
-              </p>
-            </div>
-          </div>
-          <div class="card day">
-            <div class="card-body">
               <h5 class="card-title">Mon</h5>
               <p class="card-text weather-icon">
-                <i class="fa-solid fa-cloud-sun"></i>
+                <!-- <i class="fa-solid fa-cloud-sun"></i> -->
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  id="iconMon"
+                />
+                <span id="temperature-mon">20</span>
               </p>
 
               <p class="card-text">
@@ -102,7 +106,12 @@
             <div class="card-body">
               <h5 class="card-title display">Tue</h5>
               <p class="card-text weather-icon">
-                <i class="fa-solid fa-cloud-bolt"></i>
+                <!-- <i class="fa-solid fa-cloud-bolt"></i> -->
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  id="iconTue"
+                />
+                <span id="temperature-tue">20</span>
               </p>
               <p class="card-text">
                 <small class="text-muted">20/13°C</small>
@@ -113,7 +122,12 @@
             <div class="card-body">
               <h5 class="card-title">Wed</h5>
               <p class="card-text weather-icon">
-                <i class="fa-solid fa-cloud-sun-rain"></i>
+                <!-- <i class="fa-solid fa-cloud-sun-rain"></i> -->
+                <img
+                  src="http://openweathermap.org/img/wn/01d@2x.png"
+                  id="iconWed"
+                />
+                <span id="temperature-wed">20</span>
               </p>
               <p class="card-text">
                 <small class="text-muted">25/13°C</small>
@@ -124,9 +138,46 @@
             <div class="card-body">
               <h5 class="card-title">Thu</h5>
               <p class="card-text weather-icon">
-                <i class="fa-solid fa-wind"></i>
+                <!-- <i class="fa-solid fa-wind"></i> -->
+                <img
+                  src="http://openweathermap.org/img/wn/02d@2x.png"
+                  id="iconThu"
+                />
+                <span id="temperature-thu">20</span>
               </p>
               <p class="card-text">
+                <small class="text-muted">25/13°C</small>
+              </p>
+            </div>
+          </div>
+          <div class="card day">
+            <div class="card-body">
+              <h5 class="card-title">Fri</h5>
+              <p class="card-text weather-icon">
+                <!-- <i class="fa-solid fa-wind"></i> -->
+                <img
+                  src="http://openweathermap.org/img/wn/11d@2x.png"
+                  id="iconFri"
+                />
+                <span id="temperature-fri">20</span>
+              </p>
+              <p class="card-text">
+                <small class="text-muted">25/13°C</small>
+              </p>
+            </div>
+          </div>
+          <div class="card day">
+            <div class="card-body">
+              <h5 class="card-title">Sat</h5>
+              <p class="card-text weather-icon">
+                <!-- <i class="fa-solid fa-sun"></i> -->
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  id="iconSat"
+                />
+                <span id="temperature-sat">20</span>
+              </p>
+              <p class="card-text ppp">
                 <small class="text-muted">25/13°C</small>
               </p>
             </div>
