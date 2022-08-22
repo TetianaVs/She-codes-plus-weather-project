@@ -22,25 +22,50 @@ body {
   display: inline-block;
   transition: all 200ms ease-and-out;
 }
+/* to imprement change background button, change style*/
+#change {
+  color: rgba(17, 95, 113, 0.927);
+  background: linear-gradient(
+    -20deg,
+    rgb(233, 222, 250) 0%,
+    rgb(250, 250, 226) 100%
+  );
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+  height: 50px;
+  width: 130px;
+}
 
 .search-button:hover,
 .location-button:hover {
   background: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
 }
 
+#date,
+.last-updated,
 .current-city {
   color: rgb(238, 188, 62);
+  /* margin-left: -8px; */
 }
 
 .current-weather {
   color: hsl(156, 3%, 64%);
+  font-size: 50px;
+  margin-top: 10px;
+}
+#temperature {
+  font-size: 40px;
+  color: rgba(17, 95, 113, 0.927);
+  font-weight: bold;
 }
 
-#temperature,
 .degree {
   font-size: 20px;
   color: rgba(17, 95, 113, 0.927);
   font-weight: bold;
+  position: relative;
+  top: -15px;
 }
 
 #celsius:hover,
@@ -53,9 +78,11 @@ body {
   );
 }
 
+#description,
 #humidity,
 #wind {
   color: rgba(17, 95, 113, 0.927);
+  text-transform: capitalize;
 }
 
 .date,
@@ -76,7 +103,7 @@ body {
   padding-right: 30px;
   border-radius: 4px;
   border: 1px solid hsl(156, 3%, 64%);
-  background: url(flowers.jpg);
+  background: url(ligth.jpg);
   background-size: 900px 500px;
 }
 
@@ -90,6 +117,7 @@ body {
   margin: 5px;
   border: 2px;
   padding: 10px;
+  opacity: 0.7;
 }
 
 .forecast {
