@@ -33,10 +33,13 @@
         <div class="col-9">
           <form id="search-form">
             <input
-              type="text"
+              type="search"
               id="city-input"
               class="search"
               placeholder="Enter a city"
+              class="close"
+              tabindex="0"
+              role="button"
             />
             <button type="submit" class="search-button" id="search">
               Search
@@ -67,15 +70,15 @@
           </div>
         </div>
         <div class="col-12">
-          <div class = "weather-temperature">
-          <!-- <i class="fa-solid fa-cloud-sun current-weather" id="icon"></i> -->
-          <img src="#" id="icon" />
-          <span id="temperature"></span>
-          <span class="degree"
-            ><strong><span><a href = '#' id="celsius-link" class = "active">°C |</a></strong>
-            <a href = '#' id="fahrenheit-link" class = "active">°F</span>
-          </span>
-        </div>
+          <div class="weather-temperature">
+            <!-- <i class="fa-solid fa-cloud-sun current-weather" id="icon"></i> -->
+            <img src="" id="icon" />
+            <span id="temperature"></span>
+            <span class="degree">
+              <a href="#" id="celsius-link" class="active">°C |</a>
+              <a href="#" id="fahrenheit-link" class="active">°F</a>
+            </span>
+          </div>
         </div>
         <div class="col-6">
           <p>
