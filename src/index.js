@@ -122,22 +122,26 @@ celsiusLink.addEventListener('click', displayCelsiusTemperature);
 searchCity('Kyiv');
 
 // change main background when click on #change button
-let secondbutton = document.getElementById('change');
-let body = document.getElementById('changeBackground');
+function changeone() {
+  let secondbutton = document.querySelector('#changeBackground');
+  return secondbutton.addEventListener('click', function () {
+    document.querySelector('#container').style.backgroundImage =
+      'url(src/black.jpg)';
+  });
+}
+changeone();
 
-secondbutton.addEventListener('click', function onClick() {
-  document.body.style.backgroundImage = 'url(src/11.jpg)';
-});
+// to reload the page
+// function update() {
+//   return (window.parent.location = window.parent.location.href);
+// }
 
 // to implement
 // change background depends on time of the day
 // var t = new Date().getHours();
 // if (t >= 6 && t <= 18) {
 //   // document.write('Have a good morning!');
-//   document.body.style.backgroundImage = 'url(src/11.jpg)';
+//   document.body.style.backgroundImage = 'url(src/day1.jpg)';
 // } else {
 //   document.body.style.backgroundImage = 'url(src/black.jpg)';
 // }
-
-
-
