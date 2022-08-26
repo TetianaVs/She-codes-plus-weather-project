@@ -35,6 +35,36 @@ let dateElement = document.querySelector('#date');
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
+// display forecast days group
+function displayForecast() {
+  let forecastElement = document.querySelector('#forecast');
+
+  let forecastHTML = `<div class = "card-group">`;
+  let days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="card day">
+            <div class="card-body">
+              <h5 class="card-title display">${day}</h5>
+              <p class="card-text weather-icon">
+                <i class="fa-solid fa-cloud-bolt"></i>
+               
+                <span id="temperature-tue">20</span>
+              </p>
+              <p class="card-text">
+                <small class="text-muted">20/13°C</small>
+              </p>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 // display weather conditions
 function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector('#temperature');
@@ -120,16 +150,24 @@ let celsiusLink = document.querySelector('#celsius-link');
 celsiusLink.addEventListener('click', displayCelsiusTemperature);
 
 searchCity('Kyiv');
+displayForecast();
 
 // change main background when click on #change button
-function changeone() {
-  let secondbutton = document.querySelector('#changeBackground');
-  return secondbutton.addEventListener('click', function () {
-    document.querySelector('#container').style.backgroundImage =
-      'url(src/black.jpg)';
-  });
-}
-changeone();
+// function changeone() {
+//   let secondbutton = document.querySelector('#changeBackground');
+//   return secondbutton.addEventListener('click', function () {
+//     document.querySelector('#container').style.backgroundImage =
+//       'url(src/black.jpg)';
+//   });
+// }
+// changeone();
+
+// change body background
+// let secondbutton = document.getElementById('changeBackground');
+
+// secondbutton.addEventListener('click', function changeBackground() {
+//   document.body.style.backgroundImage = 'url(src/55.jpg)';
+// });
 
 // to reload the page
 // function update() {
@@ -140,8 +178,16 @@ changeone();
 // change background depends on time of the day
 // var t = new Date().getHours();
 // if (t >= 6 && t <= 18) {
-//   // document.write('Have a good morning!');
-//   document.body.style.backgroundImage = 'url(src/day1.jpg)';
+//   document.write('Have a good morning!');
+//   document.body.style.backgroundImage = 'url(src/104.jpg)';
 // } else {
-//   document.body.style.backgroundImage = 'url(src/black.jpg)';
+//   document.body.style.backgroundImage = 'url(src/77.jpg)';
+// }
+
+// var t = new Date().getHours();
+// if (t >= 6 && t <= 18) {
+//   // document.write('Have a good morning!');
+//   document.body.style.backgroundImage = 'url(src/104.jpg)';
+// } else {
+//   document.body.style.backgroundImage = 'url(src/102_copy.jpg)';
 // }
