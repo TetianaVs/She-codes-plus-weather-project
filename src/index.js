@@ -24,6 +24,34 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatIcon(defaultIcon) {
+  if (defaultIcon === '01d') {
+    return `fa-solid fa-sun`;
+  } else if (defaultIcon === '01n') {
+    return `fa-solid fa-moon`;
+  } else if (defaultIcon === '02d') {
+    return `fa-solid fa-cloud-sun`;
+  } else if (defaultIcon === '02n') {
+    return `fa-solid fa-cloud-moon`;
+  } else if (defaultIcon === '03d' || defaultIcon === '03n') {
+    return `fa-solid fa-cloud`;
+  } else if (defaultIcon === '04d' || defaultIcon === '04n') {
+    return `fa-solid fa-cloud`;
+  } else if (defaultIcon === '09d' || defaultIcon === '09n') {
+    return `fa-solid fa-cloud-showers-heavy`;
+  } else if (defaultIcon === '10d') {
+    return `fa-solid fa-cloud-sun-rain`;
+  } else if (defaultIcon === '10n') {
+    return `fa-solid fa-cloud-moon-rain`;
+  } else if (defaultIcon === '11d' || defaultIcon === '11n') {
+    return `fa-solid fa-cloud-bolt`;
+  } else if (defaultIcon === '13d' || defaultIcon === '13n') {
+    return `fa-solid fa-snowflake`;
+  } else if (defaultIcon === '50d' || defaultIcon === '50n') {
+    return `fa-solid fa-cloud`;
+  }
+}
+
 function search(event) {
   event.preventDefault();
   let cityElement = document.querySelector('#city');
@@ -56,13 +84,10 @@ function displayForecast(response) {
             <div class="card-body">
               <h5 class="card-title display">${formatDay(forecastDay.dt)}</h5>
               <p class="card-text weather-icon">
-                <img
-          src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
-          width="42"
-        />  
+               
+                <div id="weather-icon">
+                      <i class="${formatIcon(forecastDay.weather[0].icon)}"></i>
+                    </div>
               </p>
               <p class="card-text">
                 <small class="text-muted">${Math.round(
@@ -94,6 +119,7 @@ function displayWeatherCondition(response) {
   let windElement = document.querySelector('#wind');
   let dateElement = document.querySelector('#date');
   let iconElement = document.querySelector('#icon');
+  let iconElementApi = response.data.weather[0].icon;
 
   celsiusTemperature = response.data.main.temp;
 
@@ -103,11 +129,10 @@ function displayWeatherCondition(response) {
   humidityElement.innerHTML = `Humidity:  ${response.data.main.humidity} %`;
   windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute(
-    'src',
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute('alt', response.data.weather[0].description);
+
+  iconElement.setAttribute('class', formatIcon(iconElementApi));
+
+  // iconElement.setAttribute('alt', response.data.weather[0].description);
 
   getForecast(response.data.coord);
 }
