@@ -200,6 +200,12 @@ fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
 let celsiusLink = document.querySelector('#celsius-link');
 celsiusLink.addEventListener('click', displayCelsiusTemperature);
 
+// change background depends on time of the day
+var t = new Date().getHours();
+if (t >= 6 && t <= 18) {
+  document.body.style.backgroundImage = 'url(src/img/day_clouds.jpg)';
+} else {
+  document.body.style.backgroundImage = 'url(src/img/night_stars.jpg)';
+}
+
 searchCity('Kyiv');
-
-
