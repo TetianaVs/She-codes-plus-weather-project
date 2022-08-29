@@ -19,7 +19,7 @@ function formatDate(timestamp) {
     'Friday',
     'Saturday',
   ];
-  // let day = days[dayIndex];
+
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
@@ -84,15 +84,20 @@ function displayForecast(response) {
             <div class="card-body">
               <h5 class="card-title display">${formatDay(forecastDay.dt)}</h5>
               <p class="card-text weather-icon">
-               
+                
                 <div id="weather-icon">
                       <i class="${formatIcon(forecastDay.weather[0].icon)}"></i>
                     </div>
               </p>
-              <p class="card-text">
-                <small class="text-muted">${Math.round(
-                  forecastDay.temp.max
-                )}/${Math.round(forecastDay.temp.min)}°C</small>
+              <p class="card-text"">
+              <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max"> ${Math.round(
+                    forecastDay.temp.max
+                  )}°C</span>
+                  <span class="weather-forecast-temperature-min"> ${Math.round(
+                    forecastDay.temp.min
+                  )}°C</span>
+                </div>
               </p>
             </div>
           </div>`;
@@ -131,8 +136,6 @@ function displayWeatherCondition(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
   iconElement.setAttribute('class', formatIcon(iconElementApi));
-
-  // iconElement.setAttribute('alt', response.data.weather[0].description);
 
   getForecast(response.data.coord);
 }
@@ -198,43 +201,3 @@ let celsiusLink = document.querySelector('#celsius-link');
 celsiusLink.addEventListener('click', displayCelsiusTemperature);
 
 searchCity('Kyiv');
-
-// change main background when click on #change button
-// function changeone() {
-//   let secondbutton = document.querySelector('#changeBackground');
-//   return secondbutton.addEventListener('click', function () {
-//     document.querySelector('#container').style.backgroundImage =
-//       'url(src/black.jpg)';
-//   });
-// }
-// changeone();
-
-// change body background
-// let secondbutton = document.getElementById('changeBackground');
-
-// secondbutton.addEventListener('click', function changeBackground() {
-//   document.body.style.backgroundImage = 'url(src/55.jpg)';
-// });
-
-// to reload the page
-// function update() {
-//   return (window.parent.location = window.parent.location.href);
-// }
-
-// to implement
-// change background depends on time of the day
-// var t = new Date().getHours();
-// if (t >= 6 && t <= 18) {
-//   document.write('Have a good morning!');
-//   document.body.style.backgroundImage = 'url(src/104.jpg)';
-// } else {
-//   document.body.style.backgroundImage = 'url(src/77.jpg)';
-// }
-
-// var t = new Date().getHours();
-// if (t >= 6 && t <= 18) {
-//   // document.write('Have a good morning!');
-//   document.body.style.backgroundImage = 'url(src/104.jpg)';
-// } else {
-//   document.body.style.backgroundImage = 'url(src/102_copy.jpg)';
-// }
