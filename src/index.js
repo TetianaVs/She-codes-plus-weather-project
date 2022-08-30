@@ -204,7 +204,7 @@ var t = new Date().getHours();
 if (t >= 6 && t <= 18) {
   document.body.style.backgroundImage = 'url(src/img/day_clouds.jpg)';
 } else {
-  document.body.style.backgroundImage = 'url(src/img/day_clouds.jpg)';
+  document.body.style.backgroundImage = 'url(src/img/night_stars.jpg)';
 }
 
 searchCity('Kyiv');
