@@ -84,7 +84,6 @@ function displayForecast(response) {
             <div class="card-body">
               <h5 class="card-title display">${formatDay(forecastDay.dt)}</h5>
               <p class="card-text weather-icon">
-                
                 <div id="weather-icon">
                       <i class="${formatIcon(forecastDay.weather[0].icon)}"></i>
                     </div>
@@ -205,7 +204,7 @@ var t = new Date().getHours();
 if (t >= 6 && t <= 18) {
   document.body.style.backgroundImage = 'url(src/img/day_clouds.jpg)';
 } else {
-  document.body.style.backgroundImage = 'url(src/img/night_stars.jpg)';
+  document.body.style.backgroundImage = 'url(src/img/day_clouds.jpg)';
 }
 
 searchCity('Kyiv');
